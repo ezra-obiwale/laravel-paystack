@@ -1,0 +1,38 @@
+{
+    "name": "d-scribe/laravel-paystack",
+    "type": "library",
+    "description": "A collection of classes to be extended/used in laravel applications for quick development",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "quick",
+        "api",
+        "web",
+        "controller",
+        "traits"
+    ],
+    "authors": [{
+        "name": "Ezra Obiwale",
+        "email": "contact@ezraobiwale.com",
+        "homepage": "http://ezraobiwale.com",
+        "role": "Developer"
+    }],
+    "require": {
+        "yabacon/paystack-php": "^2.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Paystack\\Providers\\LaravelProvider"
+            ],
+            "aliases": {
+                "Paystack": "Paystack\\Facades\\Laravel"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Paystack\\": "src/"
+        }
+    }
+}
