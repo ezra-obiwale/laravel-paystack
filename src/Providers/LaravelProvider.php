@@ -18,10 +18,7 @@ class LaravelProvider extends ServiceProvider
             return new Paystack($app['config']['paystack']['secret_key']);
         });
 
-        $this->mergeConfigFrom(
-            __DIR__ . '/config/paystack.php',
-            'paystack'
-        );
+        $this->mergeConfigFrom($this->configPath(), 'paystack');
     }
 
     /**
@@ -32,7 +29,12 @@ class LaravelProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config/paystack.php' => config_path('paystack.php'),
+            $this->configPath() => config_path('paystack.php'),
         ], 'paystack-config');
+    }
+
+    protected function configPath()
+    {
+        return dirname(__DIR__) . "/config/paystack.php";
     }
 }
