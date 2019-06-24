@@ -2,10 +2,10 @@
 
 namespace Paystack\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Yabacon\Paystack;
 
-class LaravelProvider extends ServiceProvider
+class ServiceProvider extends IlluminateServiceProvider
 {
     /**
      * Register services.
