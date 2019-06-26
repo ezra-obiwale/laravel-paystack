@@ -11,6 +11,16 @@ class Api extends Facade
         return 'paystack';
     }
 
+    public function __call($method, $args)
+    {
+        return $this->getFacadeRoot()->$method(...$args);
+    }
+
+    public function __get($property)
+    {
+        return $this->getFacadeRoot()->$property;
+    }
+
     public static function __callStatic($method, $args)
     {
         try {
