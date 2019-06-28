@@ -10,21 +10,21 @@ composer require d-scribe/laravel-paystack
 
 For Laravel <= 5.4:
 
-1. Add `Paystack\Providers\LaravelProvider` to the providers section in **config\app.php** file like
+1. Add `Paystack\Providers\ServiceProvider` to the providers section in **config\app.php** file like
 
     ```php
     'providers' => [
         // ...
-        Paystack\Providers\LaravelProvider::class,
+        Paystack\Providers\ServiceProvider::class,
     ]
     ```
 
-2. Add `Paystack\Facades\Laravel` to the aliases section in **config\app.php** file like
+2. Add `Paystack\Facades\Api` to the aliases section in **config\app.php** file like
 
     ```php
     'aliases' => [
         // ...
-        'Paystack' => Paystack\Facades\Laravel::class
+        'PaystackApi' => Paystack\Facades\Api::class
     ]
     ```
 
